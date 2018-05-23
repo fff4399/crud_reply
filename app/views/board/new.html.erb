@@ -1,0 +1,24 @@
+<h1>Board#new</h1>
+<p>Find me in app/views/board/new.html.erb</p>
+<p>새로운 글 작성하는 form</p>
+
+<form action = "/board/create" method = "POST" class='container'>
+  
+  <div>
+    <label>title</label>
+    <input name = "title" type="text" placeholder="title">
+  </div>
+  
+  <div>
+    <label>editor</label>
+    <input name = "editor" type="text" placeholder="editor">
+  </div>
+  
+  <div>
+    <label>content</label>
+    <textarea name="content" rows="10" placeholder="content"></textarea>
+  </div>
+  
+  <br>
+  <button type="submit">Submit</button>
+</form>

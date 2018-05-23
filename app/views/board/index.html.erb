@@ -1,0 +1,19 @@
+<h1>Board#index</h1>
+<p>Find me in app/views/board/index.html.erb</p>
+<p>새로운 글 쓰거나 작성된 글 모두 보여줌</p>
+
+
+<form action ='/board/new' method='POST' class ='container'>
+    <button type='submit'>글쓰기</button>
+</form>
+
+<% @list.each do |p| %>     <!--each 를 통해 한 행씩 데이터 뽑아온다-->
+    번호 : <%= p.id %> <br>
+    제목 : <a href="/board/show/<%= p.id%>"><%= p.title %></a> <br>
+    작성자 : <%= p.editor %> <br>
+    <hr>                     
+<% end %>
+
+
+
+

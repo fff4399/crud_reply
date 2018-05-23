@@ -1,0 +1,14 @@
+<h1>Board#show</h1>
+<p>Find me in app/views/board/show.html.erb</p>
+<p>특정 글 보여준다</p>
+
+<h1><%= @post_id %></h1>
+
+<br>
+번호 : <%= @one_post.id %> <br>
+제목 : <%= @one_post.title %> <br>
+작성자 : <%= @one_post.editor %> <br>
+내용 : <%= @one_post.content %> <br>
+<a href='/board/edit/<%= @one_post.id %>'>수정</a>
+<a href='/board/delete/<%= @one_post.id %>'>삭제</a>
+<hr>

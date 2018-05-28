@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
+  post 'comment/reply_create'
+
+  get 'comment/reply_delete'
+
   root 'board#index'
   
   get 'board/index' => 'board#index'
 
-  get 'board/show/:post_number' => 'board#show'
+  get 'board/show/:post_id' => 'board#show'
 
   post 'board/new' => 'board#new'    #새로운 post를 작성
 

@@ -1,4 +1,4 @@
-<h1>Board#show</h1>
+<h1>Board#show/ <%= params[:post_id] %></h1>
 <p>Find me in app/views/board/show.html.erb</p>
 <p>특정 글 보여준다</p>
 
@@ -11,4 +11,35 @@
 내용 : <%= @one_post.content %> <br>
 <a href='/board/edit/<%= @one_post.id %>'>수정</a>
 <a href='/board/delete/<%= @one_post.id %>'>삭제</a>
+
+
 <hr>
+<h1>댓글 작성</h1>
+<form action = "/comment/reply_create" method = "POST">
+  
+  <div>
+    <label><%= @post_id %></label>
+    <input name = "title" type="hidden">
+  </div>
+  
+  <div>
+    <label>editor</label>
+    <input name = "editor" type="text" placeholder="editor">
+  </div>
+  
+  <div>
+    <label>content</label>
+    <textarea name="content" rows="5" placeholder="content"></textarea>
+  </div>
+  
+  <br>
+  <button type="submit">Submit</button>
+</form>
+
+<h1>댓글</h1>
+<% @all_reply.each do |r| %>     <!--each 를 통해 한 행씩 데이터 뽑아온다-->
+    번호 : <%= r.id %> <br>
+    작성자 : <%= r.editor %> <br>
+    내용 : <%= r.content %> <hr>
+<% end %>
+

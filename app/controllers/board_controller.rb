@@ -4,8 +4,10 @@ class BoardController < ApplicationController
   end
 
   def show  #특정 post의 title/ content/ editor 보여줌
-    @post_id = params[:post_number]
+    @post_id = params[:post_id]
     @one_post = Post.find(@post_id)
+    
+    @all_reply = Post.find(@post_id).replies
   end
 
   def new

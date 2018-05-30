@@ -18,8 +18,8 @@
 <form action = "/comment/reply_create" method = "POST">
   
   <div>
-    <label><%= @post_id %></label>
-    <input name = "title" type="hidden">
+    <label><%= @reply_id %></label>
+    <input name = "id" type="hidden">
   </div>
   
   <div>
@@ -37,9 +37,12 @@
 </form>
 
 <h1>댓글</h1>
-<% @all_reply.each do |r| %>     <!--each 를 통해 한 행씩 데이터 뽑아온다-->
-    번호 : <%= r.id %> <br>
+<% @show_reply.each do |r| %>     <!--each 를 통해 한 행씩 데이터 뽑아온다-->
+    번호 : <%= r.reply_id %> <br>
     작성자 : <%= r.editor %> <br>
     내용 : <%= r.content %> <hr>
+    
+    <a href="/comment/reply_delete/<%= r.id %>">[삭제]</a>
+
 <% end %>
 

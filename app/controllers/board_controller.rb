@@ -7,7 +7,8 @@ class BoardController < ApplicationController
     @post_id = params[:post_id]
     @one_post = Post.find(@post_id)
     
-    @all_reply = Post.find(@post_id).replies
+    #
+    @show_reply = Post.find(@post_id).replies
   end
 
   def new

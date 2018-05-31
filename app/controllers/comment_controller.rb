@@ -2,6 +2,7 @@ class CommentController < ApplicationController
   def reply_create
     
     new_reply=Reply.new
+    
     new_reply.post_id = params[:post_id]
     new_reply.editor = params[:editor]
     new_reply.content = params[:content]

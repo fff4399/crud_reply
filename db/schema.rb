@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20180528135235) do
   end
 
   create_table "replies", force: :cascade do |t|
+    t.integer  "post_id"
     t.string   "editor"
     t.text     "content"
     t.datetime "created_at", null: false

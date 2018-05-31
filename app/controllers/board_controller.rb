@@ -16,15 +16,11 @@ class BoardController < ApplicationController
   end
 
   def create
-    t=params[:title]
-    e=params[:editor]
-    c=params[:content]
-    
     new_row = Post.new
     
-    new_row.title = t
-    new_row.editor = e
-    new_row.content = c
+    new_row.title = params[:title]
+    new_row.editor = params[:editor]
+    new_row.content = params[:content]
     
     new_row.save
     
